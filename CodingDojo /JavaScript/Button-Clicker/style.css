@@ -1,0 +1,88 @@
+
+body { 
+    font-family: 'Fresca';
+    font-weight: 200;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+}
+.nav-bar { 
+    background-color: rgb(173, 169, 169);
+    width: 1200px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main { 
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.content {
+    display: block;
+}
+.content1 { 
+    width: 600px;
+    height: 200px;
+    border: 3px solid black;
+    margin: 20px;
+    display: flex;
+}
+.content1-col1 {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.content1-col2 {
+    flex: 3;
+    margin: 40px;
+    text-align: center;
+    font-size: 25px;
+}
+.sidebar { 
+    width: 200px;
+    height: 150px;
+    border: 3px solid black;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+.dojo { 
+    padding-left: 50px;
+}
+.search { 
+    width: 300px;
+    border: 2px solid black;
+    height: 25px;
+}
+.btn-log { 
+    margin-right: 20px;
+    border: 2px solid black ;
+    box-shadow: 3px 3px black;
+    background-color: rgb(29, 119, 203);
+    color: white;
+    width: 70px;
+    height: 30px;
+}
+.definition-btn {
+    width: 170px;
+    height: 30px;
+    color: black;
+    border: 2px solid black ;
+    box-shadow: 3px 3px black;
+    background-color: rgb(102, 164, 8);
+    text-align: center;
+}
+.likes-btn {
+    width: 100px;
+    height: 30px;
+    color: black;
+    border: 2px solid black ;
+    box-shadow: 3px 3px black;
+    background-color: rgb(208, 162, 13);
+    text-align: center;
+}
+
