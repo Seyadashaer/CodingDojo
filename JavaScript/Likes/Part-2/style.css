@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body  {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 20px;
+
+}
+
+.nav {
+    height: 60px;
+    width: 800px;
+    margin: 0 auto;
+    padding-left: 20px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.title { 
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.container {
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.col-1 {
+    flex: 1;
+}
+
+
+.col-2 { 
+    flex: 3;
+
+}
+
+.user-card {
+    height: 300px;
+    border: 3px solid black ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 15px;
+}
+
+.user-photo {
+    width: 120px;
+    height: 120px;
+}
+
+.box {
+    height: 180px;
+    border: 3px solid black ;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+.row-1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.row-2 p {
+    padding-left: 20px;
+}
+
+.btn {
+    height: 40px;
+    width: 80px;
+    background-color: rgb(234, 142, 30);
+    box-shadow: 4px 4px black;
+    border: 2px solid black;
+}
