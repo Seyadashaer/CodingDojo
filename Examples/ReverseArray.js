@@ -1,12 +1,19 @@
-function reverseArray(arr) {
-    var left = 0; 
-    var right = arr.length -1; 
-    while(left < right) {
-        var temp = arr[left];
-        arr[left] = arr[right]
-        arr[right] = temp; 
+
+function reverseArray(arr) { 
+    var leftIndex = 0;
+    var rightIndex = arr.length -1;
+
+    while (leftIndex < rightIndex) { 
+        var temp = arr[leftIndex]; 
+        arr[leftIndex] = arr[rightIndex]; 
+        arr[rightIndex] = temp; 
+
+        leftIndex ++; 
+        rightIndex --;
     }
-    return arr;
+    return arr; 
+
 }
 
-console.log(reverseArray([1,6,9,3,5,7]))
+var result1 = reverseArray([1,6,8,9,3,6,5,0])
+console.log(result1)
