@@ -1,0 +1,56 @@
+    /* Set the font family */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    /* Set the background color and padding for the container element */
+    .container {
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    
+    /* Style the form */
+    .my_form {
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+    }
+    
+    /* Style the table */
+    .my_table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    /* Style the table cells */
+    .my_table td, .my_table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    
+    /* Style the table header */
+    .my_table th {
+        background-color: #4caf50;
+        color: white;
+    }
+    
+    /* Style the table rows */
+    .my_table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    
+    /* Style the buttons */
+    button {
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 8px 16px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    

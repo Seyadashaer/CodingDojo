@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book and Review</title>
+    <style>
+                        body {
+                font-family: 'Times New Roman', Times, serif;
+                background-color: #f5f5f5;
+                margin: 0;
+                padding: 0;
+                }
+
+                .container {
+                max-width: 80%;
+                margin: 0 auto;
+                background-color: white;
+                padding: 50px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 3px solid black;
+                }
+
+                .header h1 {
+                margin: 0;
+                font-size: 36px;
+                }
+
+                .header p {
+                margin: 0;
+                font-size: 18px;
+                }
+
+                button[type="button"] {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                margin-left: 20px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+                }
+
+
+
+                .form_box {
+                width: 500px;
+                padding: 20px;
+                margin: 0 auto;
+                border: 1px solid #ccc;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+                }
+
+                .form_box h1 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+                }
+
+                .form_box label {
+                display: inline-block;
+                margin-bottom: 10px;
+                font-size: 0.9em;
+                font-weight: bold;
+                }
+
+                .form_box input[type="text"],
+                .form_box textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                box-sizing: border-box;
+                font-size: 0.9em;
+                }
+
+                .form_box textarea {
+                resize: vertical;
+                }
+
+                .form_box input[type="number"] {
+                width: 60px;
+                text-align: center;
+                }
+                label[for="rating"],
+                input[type="number"] {
+                display: inline-block;
+                vertical-align: top;
+                }
+
+
+                .form_box button[type="submit"] {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                margin-left: 20px;
+                font-size: 18px;
+                cursor: pointer;
+                transition: background-color 0.2s;
+                }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div></div>
+            <div>
+                <a href="books"><button type="button">Home</button></a>
+                <a href="logout"><button type="button">Logout</button></a>
+            </div>
+        </div>
+        <div class="form_box">
+            <h1>Add a New Book Title and a Review:</h1>
+            <form action="add_book" method="post">
+                {% csrf_token %}
+                <label for="title">Book Title:</label>
+                <input type="text" name="title"><br><br>
+                <label >Author:</label><br>
+                <label>Choose from list: </label> <select name="author_id">
+                    {% for author in authors %}
+                        <option value="{{ author.id }}">{{ author.author }}</option>
+                    {% endfor %}
+                </select>
+                <br><label>OR Add new author: </label> <input class="author" type="text" name="author" style="width: 40%;"><br><br>
+                <label for="review">Review:</label>
+                <textarea name="review" id="review" cols="30" rows="10"></textarea><br><br>
+                <label for="rating" min="0" max="5">Rating: </label>
+                <input type="number" name="rating" min="0" max="5"> stars.
+                <br><br>
+                <button type="submit">Add Book and Review</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

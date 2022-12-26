@@ -1,0 +1,155 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Login & Registration </title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            .registration_form,
+            .login_form {
+                width: 45%;
+            }
+
+        .error_messages {
+
+            width: 80%;
+            margin: 0 auto;
+            width: 80%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+
+        .error_message {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 5px;
+        padding: 7px;
+        color: red;
+        font-size: 14px;
+        }
+
+        .registration_form,
+        .login_form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .registration_form h1,
+        .login_form h1 {
+            margin: 0 0 20px 0;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 95%;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="error_messages">
+        {% for message in messages %}
+        <p class="error_message">{{ message }}</p>
+        {% endfor %}
+        </div>
+    <div class="container">
+
+        <div class="registration_form">
+        <h1>Registration</h1>
+        <form action="register" method="post">
+            {% csrf_token %}
+            <label>First Name:</label>
+            <input type="text" name="first_name" placeholder="Enter First Name">
+            <label>Last Name:</label>
+            <input type="text" name="last_name" placeholder="Enter Last Name">
+            <label>Email Address:</label>
+            <input type="email" name="email" placeholder="Enter Email">
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <label>Confirm Password:</label>
+            <input type="password" name="pw_confirm" placeholder="Reenter Password">
+            <button type="submit">Register</button>
+        </form>
+        </div>
+        <div class="login_form">
+        <h1>Login</h1>
+        <form action="login" method="post">
+            {% csrf_token %}
+            <label>Email Address:</label>
+            <input type="email" name="email" placeholder="Enter Email">
+            <label>Password:</label>
+            <input type="password" name="password" placeholder="Enter Password">
+            <button type="submit">Login</button>
+        </form>
+        </div>
+    </div>
+    </body>
+
+    </html>

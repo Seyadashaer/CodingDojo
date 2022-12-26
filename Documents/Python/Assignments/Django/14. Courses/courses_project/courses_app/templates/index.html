@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+<body>
+    <div class="container">
+        {% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                    {% endfor %}
+                </ul>
+        {% endif %}
+        <div class="my_form">
+            <form action="/add_course" method="post">
+            {% csrf_token %}
+                <h1>Add a new course</h1>
+                <p>Name: <input type="text" name="name"></p>
+                <p>Description: </p>
+                    <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        <div class="my_table">
+            <h1>Courses</h1>
+            <table>
+                <tr>
+                    <td>Course Name</td>
+                    <td>Description</td>
+                    <td>Date Added</td>
+                    <td>Actions</td>
+                </tr>
+                {% for course in All_courses %}
+                <tr>
+                    <td>{{course.name}}</td>
+                    <td>{{course.description}}</td>
+                    <td>{{course.created_at}}</td>
+                    <td><a href="/display_delete_page/{{course.id}}">Delete</a></td>
+                </tr>
+
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>

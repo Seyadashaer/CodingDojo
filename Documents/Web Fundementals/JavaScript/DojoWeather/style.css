@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.nav {
+    width: 1000px;
+    height: 80px;
+    background-color: rgb(125, 192, 240);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: 0 auto;
+}
+
+.cities li {
+    list-style-type: none;
+    display: inline;
+    padding-right: 20px;
+    font-size: 22px;
+}
+
+.cities a {
+    text-decoration: none;
+    color: white;
+}
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+.title-line {
+    border-bottom: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.temperture-line {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+}
+
+#temperture {
+    margin-left: 5px;
+}
+
+.days-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    
+}
+
+.day {
+    background-color: rgb(221, 217, 217);
+    height: 350px;
+    flex: 1;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.weather-img {
+    height: 120px;
+    border-radius: 50%;
+}
+
+.temperture-degree {
+    display: flex;
+    justify-content: space-around;
+}
+.high {
+    margin-right: 30px;
+    color: rgb(187, 20, 20);
+    font-size: 20px;
+}
+.low {
+    margin-left: 30px;
+    color: rgb(25, 25, 165);
+    font-size: 20px;
+}
+.cookie {
+    border: 3px solid black;
+    height: 130px;
+    background-color: rgb(221, 217, 217);
+    border-radius: 3px;
+    position: fixed;
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+
+
+.cookie-img {
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(125, 192, 240);
+    box-shadow: 5px 5px black;
+    border: 2px solid black;
+    margin-left: 20px;
+    margin-right: 20px;
+}

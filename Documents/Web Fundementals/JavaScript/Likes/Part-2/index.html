@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes- Part 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar-->
+    <div class="nav">
+        <h1>Network</h1>
+    </div>
+    <h1 class="title">Your Feed</h1>
+    <!-- Main Content-->
+    <div class="container">
+
+
+        <!--First Column: 1/4-->
+        <div class="col-1">
+            <div class="user-card">
+                <img src="images/avatar.jpeg" alt="User Picture" class="user-photo">
+                <a href="#">Add an avatar</a>
+                <h2>James Doe</h2>
+            </div>
+
+        </div>
+
+        <!--Second Column: 3/4-->
+        <div class="col-2">
+            <div class="box">
+                <div class="row-1">
+                    <h2>John R</h2>
+                    <p><span id="likes-1">9</span> like(s)</p>
+                    <button class="btn" onclick="increseLikes('#likes-1')">Like</button>
+                </div>
+                <div class="row-2">
+                    <p>I just set up this new discord bot, let me know what you all think. <a href="#">link</a></p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="row-1">
+                    <h2>Neil M</h2>
+                    <p><span id="likes-2">9</span> like(s)</p>
+                    <button class="btn" onclick="increseLikes('#likes-2')">Like</button>
+                </div>
+                <div class="row-2">
+                    <p>Just finished my <a href="#">next comic</a>, check it out.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="row-1">
+                    <h2>Nichole K</h2>
+                    <p><span id="likes-3">12</span> like(s)</p>
+                    <button class="btn" onclick="increseLikes('#likes-3')">Like</button>
+                </div>
+                <div class="row-2">
+                    <p>I can't stop listening to the <a href="#">new album</a>. Who else is liking it? </p>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

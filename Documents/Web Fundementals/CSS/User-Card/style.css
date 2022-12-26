@@ -1,0 +1,50 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body { 
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+}
+.container { 
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-card { 
+    width: 100%;
+    background-color: white;
+    border: 2px solid rgb(179, 174, 174);
+    margin: 20px;
+}
+.card-header {
+    height: 125px;
+    background-color: rgb(66, 158, 183);
+    margin-bottom: 100px;
+}
+.card-body { 
+    padding-bottom: 50px;
+    padding-left: 50px;
+}
+
+.user-photo {
+    height: 180px;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: aliceblue;
+    padding: 5px;
+}
+.icon {
+    height: 20px;
+}
+
+.card-body h1, 
+.card-body h2,
+.card-body h3,
+.card-body p {
+    margin: 20px 0px;
+}

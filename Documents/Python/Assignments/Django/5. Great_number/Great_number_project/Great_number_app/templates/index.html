@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Great Number Game</title>
+	<style>
+        body{
+	width: 800px;
+	height: auto;
+	margin: auto;
+	font-family: "Time New Romain", verdana, sans-serif;
+}
+
+h1, p{
+	color: #01080f;
+}
+
+#submit{
+	background-color: #01080f;
+    border: none;
+    color: #e7e7e7;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+#low{
+	width: 200px;
+	height: 150px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	color: white;
+	background-color: red;
+	padding: 20px;
+}
+
+
+#high{
+	width: 200px;
+	height: 150px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: middle;
+	color: white;
+	background-color: red;
+	padding: 20px;
+}
+
+.result{
+	width: 350px;
+	height: 250px;
+	background-color: green;
+	margin: auto;
+	position: relative;
+	padding: 20px;
+	text-align: center;
+}
+
+.result > h1{
+	color: white;
+
+}
+
+a > button{
+	background-color: rgb(229, 232, 237);
+    border: 2px solid inset;
+    color: rgb(22, 21, 21);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    position: absolute;
+    left: 30%;
+    bottom: 20px;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+<h1>Welcome to Great Number Game!</h1>
+<p>I am thinking of a number between 1 and 100 </p>
+<p>Take a guess!</p>
+<form action="process" method="post">
+{% csrf_token %}
+	<input type="number" name="guess_number">
+	<br><br>
+	<input type="submit" value="Submit" id="submit">
+</form>
+<br>
+<br>
+{% if request.session.result == "low" %}
+	<div id="low">Too Low!</div>
+{% elif request.session.result == "high" %}
+	<div id="high">Too high!</div>
+{% elif request.session.result == "correct" %}
+	<div class="result">
+		<h1>{{ request.session.target_number }} was the number!</h1>
+		<h1>You got it right!</h1>
+		<a href="/replay"><button>Play Again</button></a>
+	</div>
+{% endif %}
+
+</body>
+</html>
