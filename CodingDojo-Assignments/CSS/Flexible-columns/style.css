@@ -1,0 +1,19 @@
+.row { 
+    height: 100px;
+    display: flex;
+}
+
+.col, .col-2, .col-3 {
+    flex: 1;
+    margin: 10px;
+    background-color: darkcyan;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
+.col-2 { 
+    flex: 2;
+}
+.col-3 { 
+    flex: 3;
+}

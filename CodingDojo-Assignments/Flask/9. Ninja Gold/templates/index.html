@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Gold</title>
+    <style>
+        .my_form {
+            border: 2px solid black;
+            border-radius: 10px;
+            height: 200px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .forms-container { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        .gold-container { 
+            width: 90%;
+            margin: 0 auto;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            padding-left: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .activities-container { 
+            width: 90%;
+            margin: 0 auto;
+            padding-left: 20px;
+        }
+
+        .btn { 
+            height: 30px;
+            width: 100px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .activities { 
+            height: 120px;
+            width: 100%;
+            margin: 0 auto ;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+
+        .reset { 
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gold-container">
+        <h3>Your Gold: {{session['total_gold']}}</h3>
+        <form action="/reset" method="POST" class="reset">
+            <input type="submit" name="submit" value="Reset" class="btn"/>
+        </form>
+    </div>
+    <div class="forms-container">
+        <form action="/process_money" method="post" class="my_form">
+            <h2>Farm</h2>
+            <p>Earns 10-20 golds.</p>
+            <input type="hidden" name="building" value="farm" />
+            <input type="submit" value="Find Gold!" class="btn"/>
+        </form>
+    
+        <form action="/process_money" method="post" class="my_form">
+            <h2>Cave</h2>
+            <p>Earns 5-10 golds.</p>
+            <input type="hidden" name="building" value="cave" />
+            <input type="submit" value="Find Gold!" class="btn"/>
+        </form>
+    
+        <form action="/process_money" method="post" class="my_form">
+            <h2>House</h2>
+            <p>Earns 2-5 golds.</p>
+            <input type="hidden" name="building" value="house" />
+            <input type="submit" value="Find Gold!" class="btn"/>
+        </form>
+    
+        <form action="/process_money" method="post" class="my_form">
+            <h2>Casino</h2>
+            <p>Earns/takes 0-50 golds.</p>
+            <input type="hidden" name="building" value="casino" />
+            <input type="submit" value="Find Gold!" class="btn"/>
+        </form>
+    </div>
+    <div class="activities-container">
+        <h3>Activities:</h3>
+        <div class="activities">
+
+        </div>
+    </div>
+    
+</body>
+</html>
