@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- The Navbar -->
+    <div class="nav">
+        <div class="nav1">
+            <img src="images/logo.png" alt="Bootstrap Logo">
+            <ul class="links">
+                <li ><a href="#" id="home">Home</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Examples</a></li>
+                <li><a href="#">Themes</a></li>
+                <li><a href="#">Expo</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+        <div class="nav2">
+            <select name="version" id="version">
+                <option value="1">v4.3</option>
+                <option value="2">v3.2</option>
+            </select>
+            <ul>
+                <li><a href="#"><img src="images/ico-git.png" alt="Github Account"></a></li>
+                <li><a href="#"><img src="images/ico-twitter.png" alt="Twitter Account"></a></li>
+                <li><a href="#"><img src="images/ico-slack.png" alt="Slack Icon"></a></li>
+                <li><a href="#"><img src="images/ico-coll.png" alt="Coll Icon"></a></li>
+            </ul>
+            <button class="download-btn1">Download</button>
+        </div>
+    </div>
+
+    <!-- Main Page-->
+    <div class="container">
+        <!-- First Section -->
+        <div class="section1">
+            <!--First Column 1/2 of the first section-->
+            <div class="s1-col1">
+                <h1>Bootstrap</h1>
+                <p>Build responsive, mobile-first projects on the web with the world's most popular front-end component library. </p>
+                <p>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery. </p>
+                <div class="buttons">
+                    <button class="start-btn" onclick="displayAlert()" onmouseover="changeButton(this)" onmouseout="returnButton(this)">Get Started</button>
+                    <button class="download-btn">Download</button>
+                </div>
+                <p id="p23">Currently v4.3.1</p>
+                <div class="segment">
+                    <img src="images/ad-segment.png" alt="segment ad">
+                    <div>
+                        <p>Collect customer data once with a single API. </p>
+                        <p>Power your entire tech stack. </p>
+                        <p>ads via Carbon</p>
+                    </div>
+                </div>
+            </div>
+
+            <!--Second Column 1/2 of the first section-->
+            <div class="s1-col2">
+                <img src="images/main_img.png" alt="Bootstrap Image" class="bootstrap-img">
+
+            </div>
+
+        </div>
+
+
+        <!-- Second Section -->
+        <div class="section2">
+            <!-- First Column 1/3 of the second section-->
+            <div class="section2-col">
+                <div>
+                    <img src="images/ico-install.png" alt="Installation Icon" class="icon-m">
+                    <h1>Installation</h1>
+                    <p>Include Bootstrap's source Sass and JavaScript files via npm, Composer or Meteor. Package managed installs don't include documentation, but do include our build system and readme.</p>    
+                </div>
+                <p><span class="dollar-sign">$</span> npm <span class="install">install</span> bootstrap </p>
+                <p><span class="dollar-sign">$</span> gem <span class="install">install</span> bootstrap -v 4.3.1 </p>
+                <hr>
+                <button class="btn-3">Read installation docs</button>
+            </div>
+
+            <!-- Second Column 1/3 of the second section-->
+            <div class="section2-col col22">
+                <div>
+                    <img src="images/ico-cdn.png" alt="Installation Icon" class="icon-m">
+                    <h1>BootstrapCDN</h1>
+                    <p>When you only need to iclude Bootsrap's compiled CSS or JS, you can use BootstrapCDN.</p>
+    
+                </div>
+                <h2>CSS Only</h2>
+                <div class="scroll-bar">
+                </div>
+        
+                <h2>JS, Popper.js, and jQuery</h2>
+                <p></p>
+                <hr>
+                <button class="btn-3">Explore the docs</button>
+
+            </div>
+
+            <!-- Third Column 1/3 of the second section-->
+            <div class="section2-col">
+                <div>
+                    <img src="images/ico-themes.png" alt="Installation Icon" class="icon-m">
+                    <h1>Oficial Themes</h1>
+                    <p>Take Bootstrap 4 to the next level with official premium themes—toolkits built on Bootstrap with new components and plugins, dots, and build tools. </p>
+    
+                </div>
+                
+                <img src="images/theme_img.png" alt="theme image" id="theme">
+                <hr>
+                <button class="btn-3">Browse themes</button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- The Footer-->
+        <div class="footer">
+            <ul>
+                <li><a href="#">Github</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Examples</a></li>
+                <li><a href="#">About</a></li>
+
+            </ul>
+            <div>
+                <p>Designed and built with all the love in the world by <b>Boostrap team</b> with the help of <b> our contributors.</b> </p>
+                <p>Currently v4.3.1. Code licensed <b>MIT</b>, docs <b>CC BY 3.0.</b> </p>
+    
+            </div>
+
+        </div>
+
+
+
+    </div>
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
