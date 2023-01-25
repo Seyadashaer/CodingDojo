@@ -1,0 +1,244 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>The pies</title>
+
+        <style>
+                body {
+                font-family: 'Times New Roman', Times, serif;
+                background-color: #f5f5f5;
+                margin: 0;
+                padding: 0;
+                }
+
+                .main { 
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start ;
+                    width: 100%;
+                    margin-top: 50px;
+                }
+
+                .container {
+                max-width: 70%;
+                margin: 0 auto;
+                background-color: white;
+                padding: 50px;
+                border-radius: 5px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
+
+                .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 3px solid black;
+                }
+
+                .header h1 {
+                margin: 0;
+                font-size: 36px;
+                }
+
+                .header p {
+                margin: 0;
+                font-size: 18px;
+                }
+
+                button[type="button"] {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 20px;
+                margin-left: 20px;
+                font-size: 18px;
+                }
+
+
+                .main {
+                display: flex;
+                flex-direction: row;
+                }
+
+                .pies {
+                flex: 1;
+                border: 2px solid black;
+                padding: 20px;
+                border-radius: 5px;
+                margin-right: 20px;
+
+                }
+
+                .add_pie {
+                flex: 1;
+                }
+
+                .form_box {
+                border: 2px solid black;
+                padding: 10px;
+                border-radius: 5px;
+
+                }
+
+                h2 {
+                margin-bottom: 20px;
+                }
+
+                form {
+                display: flex;
+                flex-direction: column;
+                }
+
+                label {
+                font-weight: bold;
+                margin-bottom: 10px;
+                }
+
+                input[type="text"], textarea {
+                border: 2px solid black;
+                border-radius: 5px;
+                padding: 10px;
+                }
+
+                button[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 18px;
+                }
+
+                
+
+                h3 {
+                margin-bottom: 20px;
+                }
+
+                ul {
+                list-style: square;
+                padding: 0;
+                }
+
+                li {
+                margin-bottom: 10px;
+                }
+                .error_messages {
+
+                    width: 95%;
+                    background-color: white;
+                    padding: 5px;
+                    border-radius: 5px;
+                    font-size: 12px;
+                    }
+
+
+                    .error_message {
+                    background-color: #f8d7da;
+                    border: 1px solid #f5c6cb;
+                    border-radius: 5px;
+                    padding: 7px;
+                    color: red;
+                    font-size: 14px;
+                    }
+
+                        table {
+                    width: 90%;
+                    border-collapse: collapse;
+                    }
+
+                    th, td {
+                    border: 1px solid black;
+                    padding: 8px;
+                    }
+
+                    tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                    }
+
+                    th {
+                    background-color: #4CAF50;
+                    color: white;
+                    }
+
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+        </style>
+    </head>
+
+    <body>
+        
+        <div class="container">
+            <div class="header">
+                <div>
+                </div>
+                <div>
+                    <a href="/pies"><button type="button">Pie Derby</button></a>
+                    <a href="/logout"><button type="button">Logout</button></a>
+
+
+                </div>
+            </div>
+
+            <div class="main">
+                <div class="pies">
+                    <h3>PyPies by {{ user.first_name }}:</h3>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Actions</th>
+                        </tr>
+
+                        {% for pie in user_pies %}
+                        <tr>
+                            <td>{{ pie.pie_name }}</td>
+                            <td><a href="edit/{{pie.id}}">Edit</a> | <a href="delete/{{pie.id}}">Delete</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                </div>
+                <div class="add_pie">
+                    <div class="form_box">
+                        <div class="error_messages">
+                            {% for message in messages %}
+                            <p class="error_message">{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                        <h2>Add New PyPie: </h2>
+                        <form action="add_pie" method="post">
+                            {% csrf_token %}
+                            <label for="pie_name">Name:</label>
+                            <input type="text" name="pie_name"><br><br>
+                            <label for="filling">Filling:</label>
+                            <input type="text" name="filling"><br><br>
+                            <label for="crust">Crust:</label>
+                            <input type="text" name="crust"><br><br>
+                            
+                            
+                            <button type="submit">Add pie</button>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+    </body>
+    </html>
